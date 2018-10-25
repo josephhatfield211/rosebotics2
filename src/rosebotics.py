@@ -173,7 +173,7 @@ class ArmAndClaw(object):
 
 
 class TouchSensor(rb.TouchSensor):
-    """ Primary author of this class:  PUT_YOUR_NAME_HERE. """
+    """ Primary author of this class:  Yuanning Zuo. """
 
     def __init__(self, port=ev3.INPUT_1):
         super().__init__(port)
@@ -190,6 +190,9 @@ class TouchSensor(rb.TouchSensor):
         while True:
             if self.get_value()==0:
                 break
+
+
+
 
 
 class Camera(object):
