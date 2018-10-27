@@ -19,6 +19,22 @@ def main():
         time.sleep(0.5)
         count = count +1
 
+def findingcolour(color):
+    robot = rb.Snatch3rRobot()
+    print()
+    print("Testing!")
+    time.sleep(2)
+    print("Testing!!")
+    time.sleep(3)
+    print("Testing!!!")
+    time.sleep(3)
+    print("CTRL-C to TERMINATE the program!!!!!!!!!")
+    time.sleep(1)
+    while True:
+        robot.drive_system.go_straight_inches(1, 100)
+        if robot.color_sensor.get_color() == (color.value):
+            break
+    robot.drive_system.stop_moving()
 
 
 
@@ -26,4 +42,9 @@ def main():
 
 
 
-main()
+
+
+
+findingcolour(rb.Color.BLUE)
+
+
