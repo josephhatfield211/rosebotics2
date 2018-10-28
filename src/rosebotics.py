@@ -55,7 +55,7 @@ class Snatch3rRobot(object):
 class DriveSystem(object):
     """
     A class for driving (moving) the robot.
-    Primary authors:  entire team plus PUT_YOUR_NAME_HERE.
+    Primary authors:  entire team plus Nathaniel Blanco.
     """
 
     def __init__(self,
@@ -236,7 +236,7 @@ class ColorSensor(rb.ColorSensor):
         """
         # done.
         while True:
-            if self.get_reflected_intensity() > reflected_light_intensity:
+            if self.get_reflected_intensity() < reflected_light_intensity:
                 break
 
     def wait_until_intensity_is_greater_than(self, reflected_light_intensity):
@@ -247,7 +247,7 @@ class ColorSensor(rb.ColorSensor):
         """
         # done.
         while True:
-            if self.get_reflected_intensity() < reflected_light_intensity:
+            if self.get_reflected_intensity() > reflected_light_intensity:
                 break
 
     def wait_until_color_is(self, color):
@@ -270,8 +270,6 @@ class ColorSensor(rb.ColorSensor):
         """
         # done.
         while True:
-            print(self.get_color(), colors)
-            time.sleep(.5)
             for k in range(len(colors)):
                 if self.get_color() == colors[k]:
                     return
