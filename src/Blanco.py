@@ -30,19 +30,17 @@ def main():
 
             # Runs if robot is back on black within 0.25 seconds (implying that robot is turning in right direction)
             if color.get_reflected_intensity() < 10:
-                drive.stop_moving()
                 break
 
             # Runs if robot has not encountered black after 0.25 seconds in direction it's turning
-            if counter > 0.25 and color.get_reflected_intensity() > 10:
+            if counter > 0.5 and color.get_reflected_intensity() > 10:
                 print('No black detected, turn around!')
-                drive.stop_moving()
 
                 # Revert to original position
                 if turn_right is True:
-                    drive.move_for_seconds(0.25, -100, 0)
+                    drive.move_for_seconds(1, -100, 0)
                 else:
-                    drive.move_for_seconds(0.25, 0, -100)
+                    drive.move_for_seconds(1, 0, -100)
 
                 # Changes direction to turn in the future
                 if turn_right is True:
@@ -59,7 +57,6 @@ def main():
                         drive.start_moving(0, 100)
 
                     if color.get_reflected_intensity() < 10:
-                        drive.stop_moving()
                         break
 
             counter = counter + 0.05
