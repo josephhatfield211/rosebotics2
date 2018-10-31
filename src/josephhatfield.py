@@ -8,6 +8,10 @@ import time
 
 
 def main():
+    #colorsensortest()
+    polygontest(5)
+
+def colorsensortest():
     """ Runs YOUR specific part of the project """
     colors = [rb.Color.RED.value, rb.Color.WHITE.value, rb.Color.BLUE.value]
     robot = rb.Snatch3rRobot()
@@ -20,6 +24,13 @@ def main():
     print(time.localtime())
     robot.color_sensor.wait_until_color_is(rb.Color.WHITE.value)
     print(time.localtime())
-    
+def polygontest(n):
+    robot = rb.Snatch3rRobot()
+    for k in range(n):
+        robot.drive_system.go_straight_inches(10)
+        time.sleep(.5)
+        robot.drive_system.spin_in_place_degrees(180-((180*(n-2))//n))
+        time.sleep(.5)
+        print(180-((180*(n-2)//n)))
 
 main()

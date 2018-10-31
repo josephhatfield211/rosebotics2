@@ -3,7 +3,7 @@
   for a variety of applications of the robot.  Augment as appropriate.
 
   Team # PUT_YOUR_TEAM_NUMBER_HERE.
-  Team members:  PUT_YOUR_NAMES_HERE.
+  Team members:  Joey Hatfield, Nathaniel Blanco, Yuanning Zuo.
   Fall term, 2018-2019.
 """
 
@@ -133,7 +133,7 @@ class DriveSystem(object):
         self.start_moving(duty_cycle_percent, -duty_cycle_percent)
 
         while True:
-            if math.fabs(self.right_wheel.get_degrees_spun()) >= 520 * degrees / 90:
+            if math.fabs(self.right_wheel.get_degrees_spun()) >= 396 * degrees / 90:
                 self.stop_moving(stop_action)
                 self.right_wheel.reset_degrees_spun()
                 break
@@ -258,8 +258,6 @@ class ColorSensor(rb.ColorSensor):
         """
         # done.
         while True:
-            print(self.get_color(), color)
-            time.sleep(.5)
             if self.get_color() == color:
                 break
     def wait_until_color_is_one_of(self, colors):
@@ -273,7 +271,9 @@ class ColorSensor(rb.ColorSensor):
             for k in range(len(colors)):
                 if self.get_color() == colors[k]:
                     return
-
+def make_move_polygon(self, n):
+    for k in range(n):
+        print(k)
 
 class InfraredSensorAsProximitySensor(object):
     """ Primary author of this class:  PUT_YOUR_NAME_HERE. """
