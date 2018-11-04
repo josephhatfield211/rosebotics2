@@ -730,7 +730,7 @@ class ArmAndClaw(object):
         Spin the arm's motor until it reaches the given position.
         Move at a reasonable speed.
         """
-        # TODO: Do this as STEP 3 of implementing this class.
+        # done: Do this as STEP 3 of implementing this class.
         self.motor.reset_degrees_spun()
         time.sleep(.5)
         if 14.2*position <= 14.2*360:
