@@ -9,7 +9,8 @@ import time
 
 def main():
     #colorsensortest()
-    polygontest(5)
+    #polygontest(5)
+    arm_and_claw_test()
 
 def colorsensortest():
     """ Runs YOUR specific part of the project """
@@ -32,5 +33,9 @@ def polygontest(n):
         robot.drive_system.spin_in_place_degrees(180-((180*(n-2))//n))
         time.sleep(.5)
         print(180-((180*(n-2)//n)))
-
+def arm_and_claw_test():
+    robot = rb.Snatch3rRobot()
+    #robot.arm.raise_arm_and_close_claw()
+    #robot.arm.calibrate()
+    robot.arm.move_arm_to_position(420)
 main()
