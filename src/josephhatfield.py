@@ -37,5 +37,5 @@ def arm_and_claw_test():
     robot = rb.Snatch3rRobot()
     #robot.arm.raise_arm_and_close_claw()
     #robot.arm.calibrate()
-    robot.arm.move_arm_to_position(420)
+    robot.arm.move_arm_to_position(69000000)
 main()
