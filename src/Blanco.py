@@ -4,10 +4,25 @@
 """
 
 import rosebotics as rb
+import rosebotics_new as rb2
+import ev3dev.ev3 as ev3
 import time
 
 
-def main():
+def proximity_test():
+
+    print('Running!')
+    infrared = rb2.InfraredAsProximitySensor(ir_sensor_port=ev3.INPUT_4)
+
+    while True:
+
+        if infrared.get_distance_to_nearest_object() < 20:
+            ev3.Sound.beep().wait()
+            ev3.Sound.speak("Object is close!").wait()
+            break
+
+
+def follow_black_circle():
     """ Runs YOUR specific part of the project """
     robot = rb.Snatch3rRobot()
     drive = robot.drive_system
@@ -64,4 +79,4 @@ def main():
             time.sleep(0.05)
 
 
-main()
+proximity_test()

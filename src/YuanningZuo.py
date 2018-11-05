@@ -48,7 +48,7 @@ def finding_object():
     time.sleep(3)
 
     while True:
-        if robot.camera.get_biggest_blob().get_area() >= 1:
+        if robot.camera.get_biggest_blob().get_area() >= 300:
             ev3.Sound.beep().wait()
             ev3.Sound.speak("It is huge").wait()
             break
