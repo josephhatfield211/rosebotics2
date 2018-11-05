@@ -38,4 +38,5 @@ def arm_and_claw_test():
     robot.arm.raise_arm_and_close_claw()
     robot.arm.calibrate()
     robot.arm.move_arm_to_position(69000000)
+
 main()
