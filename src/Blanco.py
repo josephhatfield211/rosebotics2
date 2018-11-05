@@ -23,6 +23,7 @@ def proximity_test():
             break
 
 
+
 def follow_black_circle():
     """ Runs YOUR specific part of the project """
     robot = rb.Snatch3rRobot()
