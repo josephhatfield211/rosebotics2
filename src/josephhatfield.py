@@ -35,7 +35,7 @@ def polygontest(n):
         print(180-((180*(n-2)//n)))
 def arm_and_claw_test():
     robot = rb.Snatch3rRobot()
-    #robot.arm.raise_arm_and_close_claw()
-    #robot.arm.calibrate()
+    robot.arm.raise_arm_and_close_claw()
+    robot.arm.calibrate()
     robot.arm.move_arm_to_position(69000000)
 main()
