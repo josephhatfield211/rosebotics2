@@ -1,16 +1,19 @@
 """
-  Capstone Project.  Code written by PUT_YOUR_NAME_HERE.
+  Capstone Project.  Code written by Joey Hatfield.
   Fall term, 2018-2019.
 """
 
 import rosebotics_new as rb
 import time
-
+import tkinter
+from tkinter import ttk
+import mqtt_remote_method_calls as com
 
 def main():
     #colorsensortest()
     #polygontest(5)
-    arm_and_claw_test()
+    #arm_and_claw_test()
+    beacon_go_to_test()
 
 def colorsensortest():
     """ Runs YOUR specific part of the project """
@@ -38,5 +41,20 @@ def arm_and_claw_test():
     robot.arm.raise_arm_and_close_claw()
     robot.arm.calibrate()
     robot.arm.move_arm_to_position(69000000)
+def beacon_go_to_test():
+    #robot = rb.Snatch3rRobot()
+    root = tkinter.Tk()
+    root.title('Beacon Control')
+    frame = ttk.Frame(root, padding=10)
+    frame.grid()
+    button = ttk.Button(frame, text='Infrared Beacon')
+    button.grid()
+    button['command'] = lambda: print('going')#go_places(robot)
+    #while True:
+    #   print(robot.beacon_sensor.get_distance_to_beacon(),robot.beacon_sensor.get_heading_to_beacon(),robot.beacon_sensor.get_heading_and_distance_to_beacon())
+    root.mainloop()
+# def go_places(robot):
+#     turn = robot.beacon_sensor.get_heading_to_beacon()
+#     go = robot.beacon_sensor.get_distance_to_beacon()
 
 main()

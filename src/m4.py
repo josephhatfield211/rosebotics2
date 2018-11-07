@@ -3,12 +3,16 @@
   Fall term, 2018-2019.
 """
 
-import rosebotics as rb
+import rosebotics_new as rb
+from ev3dev import ev3
 import time
 
 
 def main():
-    """ Runs YOUR specific part of the project """
+    robot = rb.Snatch3rRobot
+    while True:
+        print(robot.beacon_sensor.get_distance_to_beacon())
+        print(robot.beacon_sensor.get_heading_to_beacon())
 
 
 main()
